@@ -1,30 +1,11 @@
-#!/usr/bin/env python3
-"""
-YouTube Music Playlist Stats
-Authenticate and interact with a user's YouTube Music account.
-
-Setup:
-1. Go to https://console.cloud.google.com/
-2. Create a new project (or select existing)
-3. Enable "YouTube Data API v3"
-4. Go to Credentials → Create Credentials → OAuth 2.0 Client ID
-5. Choose "TVs and Limited Input devices" as application type
-6. Download the JSON credentials file and save as "oauth-secerets.json"
-7. Run this script
-"""
-
 import random
 import sys
-from pathlib import Path
 from ytmusicapi import YTMusic, LikeStatus
 import json
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from thefuzz import fuzz
 from time import sleep
 
-
-OAUTH_FILE = Path(__file__).parent / "oauth.json"
-SECRETS_FILE = Path(__file__).parent / "oauth-secerets.json"
 
 def print_progress_bar(iteration, total, prefix='', suffix='', length=40, fill='█'):
     if total == 0:
