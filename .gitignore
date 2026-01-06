@@ -1,0 +1,12 @@
+# Auth credentials - DO NOT COMMIT
+browser.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
